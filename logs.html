@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="./">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+        <meta name="author" content="Łukasz Holeczek">
+        <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+        <title>Logs</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Vendors styles-->
+        <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
+        <link rel="stylesheet" href="css/vendors/simplebar.css">
+        <!-- Main styles for this application-->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- We use those styles to show code examples, you should remove them in your application.-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+        <link href="css/examples.css" rel="stylesheet">
+        <!-- Global site tag (gtag.js) - Google Analytics-->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          // Shared ID
+          gtag('config', 'UA-118965717-3');
+          // Bootstrap ID
+          gtag('config', 'UA-118965717-5');
+        </script>
+      </head>
+<body>
+  <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+    <!-- LOGO -->
+    <div style="display: flex; justify-content:center; align-items:center; margin-top:12px; color: #00A651;">
+      <h4>SMART<br>WASTE</h4>
+      <img src="./assets/my-img/smart-bin2.png" alt="">
+    </div>
+    <!-- NAV BAR -->
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar style="margin-top: 12px">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <div>
+            <i class="fa-solid fa-house"></i>
+            <span> DASHBOARD</span>
+          </div>
+      </a>
+
+      <li class="nav-item">
+        <a class="nav-link" href="main.html">
+        <div>
+          <i class="fa-solid fa-gears"></i>
+          <span>MAIN</span>
+        </div> 
+      </a>
+      </li>
+
+      <li class="nav-item"><a class="nav-link" href="charts.html">
+        <div >
+          <i class="fa-solid fa-chart-gantt"></i>
+          <span>CHARTS</span>
+        </div> 
+      </a>
+      </li>
+
+
+
+      <li class="nav-item"><a class="nav-link  active" href="logs.html">
+        <div >
+          <i class="fa-solid fa-bars"></i>
+          <span>LOGS</span>
+        </div> 
+      </a>
+      </li>
+
+    </ul>
+  </div>
+
+      <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header -->
+        <header class="header header-sticky mb-4">
+          <div class="container-fluid">
+            <h3>LOGS</h3>
+          </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="body flex-grow-1 px-3">
+          <div class="container-lg">
+            <div class="card sm-10">
+              <div class="card-header" style="background-color: #00a651; color: white;">
+                <div class="log-tool" style="display: flex; margin: 8px 0; justify-content: space-between;">
+                  <div class="tool-container" style="display: flex;">
+  
+                    <button id="btn_export" class="btn btn-success" style="display: flex; align-items: center">
+                      <i class="fa-solid fa-file-export" style="margin-right: 12px;"></i>
+                      Export
+                    </button>
+                  </div>
+
+                  <button id="btn_refresh" class="btn btn-success" style="display: flex;">
+                    <i class="fa-solid fa-retweet" style="margin: auto;"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="font-size: 16px; text-align: center">
+                <table id="logsTable" class="table table-hover table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID Thiết bị</th>
+                      <th scope="col">Tên thiết bị</th>
+                      <th scope="col">Tọa độ GPS</th>
+                      <th scope="col">Trạng thái</th>
+                      <th scope="col">Thời gian</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                    
+                  </tbody>
+                </table>
+
+                <div style="display: flex;">
+                  <nav aria-label="Page navigation" style="margin:auto">
+                    <ul class="pagination">
+                      <li class="page-item" id="btn_prev">
+                        <a class="page-link" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a id="current-page" class="page-link"></a>
+                      </li>
+                      <li id="btn_next" class="page-item" id="btn_next">
+                        <a class="page-link" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <script src="js/logs.js"></script>
+    <script> 
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="./">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+        <meta name="author" content="Łukasz Holeczek">
+        <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+        <title>Charts</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Vendors styles-->
+        <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
+        <link rel="stylesheet" href="css/vendors/simplebar.css">
+        <!-- Main styles for this application-->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- We use those styles to show code examples, you should remove them in your application.-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+        <link href="css/examples.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-streaming/2.0.0/chartjs-plugin-streaming.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics-->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          // Shared ID
+          gtag('config', 'UA-118965717-3');
+          // Bootstrap ID
+          gtag('config', 'UA-118965717-5');
+        </script>
+      </head>
+<body>
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+        <!-- LOGO -->
+        <div class="sidebar-brand d-none d-md-flex">
+         
+        </div>
+  
+        <!-- NAV BAR -->
+        <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+          <!-- LOGO -->
+          <div style="display: flex; justify-content:center; align-items:center; margin-top:12px; color: #00A651;">
+            <h4>SMART<br>WASTE</h4>
+            <img src="./assets/my-img/smart-bin2.png" alt="">
+          </div>
+          <!-- NAV BAR -->
+          <ul class="sidebar-nav" data-coreui="navigation" data-simplebar style="margin-top: 12px">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <div>
+                  <i class="fa-solid fa-house"></i>
+                  <span> DASHBOARD</span>
+                </div>
+            </a>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">
+              <div>
+                <i class="fa-solid fa-gears"></i>
+                <span>MAIN</span>
+              </div> 
+            </a>
+            </li>
+    
+            <li class="nav-item"><a class="nav-link  active" href="charts.html">
+              <div >
+                <i class="fa-solid fa-chart-gantt"></i>
+                <span>CHARTS</span>
+              </div> 
+            </a>
+            </li>
+    
+    
+    
+            <li class="nav-item"><a class="nav-link" href="logs.html">
+              <div >
+                <i class="fa-solid fa-bars"></i>
+                <span>LOGS</span>
+              </div> 
+            </a>
+            </li>
+    
+          </ul>
+        </div>
+      </div>
+
+      <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+        <!-- Header -->
+        <header class="header header-sticky mb-4">
+          <div class="container-fluid">
+            <h3>CHARTS</h3>
+          </div>
+        </header>
+        <!-- CONTENT -->
+        <div class="body flex-grow-1 px-3">
+          <div class="container-lg">
+            <div class="row">
+              <div class="col col-sm-8">
+                  <div class="card mb-4">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <h4 class="card-title mb-0">Tần suất mỗi ngày</h4>
+                        </div>
+                      </div>
+                      <div class="c-chart-wrapper" style="height:400px;margin-top:40px;">
+                        <canvas class="chart" id="day-chart" height="300"></canvas>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col col-sm-4">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <h4 class="card-title mb-0">Thống kê</h4>
+                      </div>
+                    </div>
+                    <div class="c-chart-wrapper" style="height:400px;margin-top:40px;">
+                      <canvas class="chart" id="device-chart" height="200" style="display: block; box-sizing: border-box; height: 284.444px; width: 569.778px; margin-top: 28px"></canvas>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./js/charts.js"></script>
+    <script> 
+    </script>
+</body>
+</html>

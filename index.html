@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Vendors styles-->
+    <link rel="stylesheet" href="node_modules/simplebar/dist/simplebar.css">
+    <link rel="stylesheet" href="css/vendors/simplebar.css">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- We use those styles to show code examples, you should remove them in your application.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
+    <link href="css/examples.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      // Shared ID
+      gtag('config', 'UA-118965717-3');
+      // Bootstrap ID
+      gtag('config', 'UA-118965717-5');
+    </script>
+    <link href="node_modules/@coreui/chartjs/dist/css/coreui-chartjs.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+      <!-- LOGO -->
+      <div style="display: flex; justify-content:center; align-items:center; margin-top:12px; color: #00A651;">
+        <h4>SMART<br>WASTE</h4>
+        <img src="./assets/my-img/smart-bin2.png" alt="">
+      </div>
+      <!-- NAV BAR -->
+      <ul class="sidebar-nav" data-coreui="navigation" data-simplebar style="margin-top: 12px">
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">
+            <div>
+              <i class="fa-solid fa-house"></i>
+              <span> DASHBOARD</span>
+            </div>
+        </a>
+
+        <li class="nav-item">
+          <a class="nav-link" href="main.html">
+          <div>
+            <i class="fa-solid fa-gears"></i>
+            <span>MAIN</span>
+          </div> 
+        </a>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="charts.html">
+          <div >
+            <i class="fa-solid fa-chart-gantt"></i>
+            <span>CHARTS</span>
+          </div> 
+        </a>
+        </li>
+
+
+
+        <li class="nav-item"><a class="nav-link" href="logs.html">
+          <div >
+            <i class="fa-solid fa-bars"></i>
+            <span>LOGS</span>
+          </div> 
+        </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="wrapper d-flex flex-column min-vh-100 bg-light">
+      <!-- Header -->
+      <header class="header header-sticky mb-4">
+        <div class="container-fluid">
+          
+          <h3>DASHBOARD</h3>
+          
+        </div>
+        
+      </header>
+      <!-- CONTENT -->
+      <div class="body flex-grow-1 px-3">
+        <div class="container-lg">
+          <div class="card text-black">
+            <img class="card-img" src="./assets/my-img/planet.jpg" alt="Card image" style="padding-top:50px">
+            <div class="card-img-overlay" style="text-align: center">
+              <h3 class="card-title">Hệ thống xử lý rác thải thành phố</h3>
+              <p class="card-text">Giám sát và quản lý chất thải từ nguồn đến bãi chôn lấp với sự hỗ trợ của công nghệ.</p>
+            </div>
+          </div>
+
+          <div class="row" style="display: flex; margin:30px 0;">
+            <h6 style="max-width: 80%; margin: auto; text-align: justify;" class="card-title">Hệ thống của chung tôi cung cấp một số giải pháp về việc quản lý và thu gom chất thải trong một khu vực với sự hỗ trợ của công nghệ Internet of Things. Từ việc sử dụng kết hợp cảm biến khoảng cách để xác định mức lấp đầy trong các thùng rác đến việc cung cấp các đề xuất tuyến đường được tối ưu hóa cho tài xế xe tải; tất cả điều này sẽ tiết kiệm chi phí, thời gian và năng lượng.</h6>
+          </div>
+  
+          <div class="row" style="display: flex; margin:30px 0;">
+            <h6 style="max-width: 80%; margin: auto; text-align: center;" class="card-title">Một số giải pháp mà hệ thống chung tôi sẽ cung cấp</h6>
+          </div>
+  
+          <div class="card mb-3" style="max-width: 60%; float: left; margin-left: 5%;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <div class="card-body">
+                  <h5 class="card-title">Nhận biết</h5>
+                  <p class="card-text">Sử dụng cảm biến sóng siêu âm để phát hiện ra thùng rác đã đầy hay chưa. Dữ liệu sẽ được tự động gửi về trung tâm giám sát.</p>
+                </div>
+              </div>
+  
+              <div class="col-md-8">
+                <img src="./assets/my-img/TrashFill-Sense.png" class="card-img" alt="...">
+              </div>
+            </div>
+          </div>
+  
+          <div class="card mb-3" style="max-width: 60%; float: right; margin-right: 5%;">
+            <div class="row no-gutters">
+              <div class="col-md-8">
+                <img src="./assets/my-img/Route-Optimization.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-4">
+                <div class="card-body">
+                  <h5 class="card-title">Tìm đường</h5>
+                  <p class="card-text">Chúng tôi cung cấp một cái nhìn tổng quát về vị trí của các thùng rác và tuyến đường thu gom tối ưu nhất cho nhân viên, giảm chi phí và thời gian một cách đáng kể.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+            <div style="display: flex; justify-content: center; width: 100%; margin-bottom: 24px">
+              <div class="card text-black" style="width: 80%;">
+                <img class="card-img" src="./assets/my-img/dashboard.png" alt="Card image">
+                <div class="card-img" style="text-align: center">
+                  <h5 class="card-title">Bảng điều khiển</h5>
+                  <p class="card-text">Dashboard hiển thị đầy đủ các thông tin cần thiết. Dễ dàng nắm bắt được các thông tin liên quan</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script> 
+    </script>
+  </body>
+</html>
